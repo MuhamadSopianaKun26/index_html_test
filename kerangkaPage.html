@@ -1,27 +1,22 @@
-<!-- Source DEEPSEEK, dibantu AI karena saya belum begitu memahami javascript dengan baik-->
+<!-- source DeepSeek AI -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <!-- Metadata Dinamis akan diisi oleh JavaScript -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Default Title</title>
-  <meta name="description" content="Default description">
-  <meta name="keywords" content="default, keywords">
   
-  <!-- OpenGraph Tags -->
+  <!-- Default Metadata -->
+  <title>Default Title</title>
+  <meta name="description" content="Deskripsi default halaman">
+  
+  <!-- OpenGraph Default -->
   <meta property="og:title" content="Default OG Title">
   <meta property="og:description" content="Default OG Description">
-  <meta property="og:image" content="https://www.techslang.com/wp-content/uploads/2020/05/SEO-Specialist.jpg">
+  <meta property="og:image" content="https://example.com/default-image.jpg">
   <meta property="og:url" content="https://example.com">
   <meta property="og:type" content="website">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Default Twitter Title">
-  <meta name="twitter:description" content="Default Twitter Description">
-  <meta name="twitter:image" content="https://www.techslang.com/wp-content/uploads/2020/05/SEO-Specialist.jpg">
   
   <style>
     body {
@@ -30,100 +25,54 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-      color: #333;
-    }
-    h1 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 10px;
-    }
-    .meta-info {
-      background-color: #f8f9fa;
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 20px;
-    }
-    .meta-info h2 {
-      margin-top: 0;
-      color: #2980b9;
     }
     button {
-      background-color: #3498db;
+      background: #4285f4;
       color: white;
       border: none;
       padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
       margin: 5px;
-    }
-    button:hover {
-      background-color: #2980b9;
-    }
-    .buttons {
-      margin: 20px 0;
+      border-radius: 4px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="meta-info">
-    <h2>Metadata Information</h2>
-    <p><strong>Title:</strong> <span id="meta-title">Default Title</span></p>
-    <p><strong>Description:</strong> <span id="meta-description">Default description</span></p>
-    <p><strong>OG Title:</strong> <span id="og-title">Default OG Title</span></p>
-    <p><strong>OG Image:</strong> <span id="og-image">https://www.techslang.com/wp-content/uploads/2020/05/SEO-Specialist.jpg</span></p>
-  </div>
-
   <h1 id="page-title">Default Page Title</h1>
-  <p id="page-content">This is default page content. Select a page type below to see dynamic metadata in action.</p>
+  <p id="page-content">Konten default halaman.</p>
   
-  <div class="buttons">
-    <button onclick="loadPage('home')">Home Page</button>
-    <button onclick="loadPage('product')">Product Page</button>
-    <button onclick="loadPage('article')">Article Page</button>
-  </div>
-
   <div>
-    <h3>Test OpenGraph on Social Media:</h3>
-    <p>To test how this page will appear when shared:</p>
-    <ol>
-      <li>Copy this page URL after selecting a page type</li>
-      <li>Use <a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Sharing Debugger</a></li>
-      <li>Or paste the URL in WhatsApp, LinkedIn, etc.</li>
-    </ol>
+    <button onclick="loadPage('home')">Home</button>
+    <button onclick="loadPage('product')">Product</button>
+    <button onclick="loadPage('article')">Article</button>
   </div>
 
   <script>
-    // Data untuk berbagai jenis halaman (hanya simulasi API atau Database)
+    // Data untuk berbagai jenis halaman
     const pages = {
       home: {
-        title: "Welcome to Our Website",
-        description: "Discover our amazing products and services for your needs",
-        keywords: "home, welcome, main page",
-        ogTitle: "Welcome to Our Awesome Website!",
-        ogDescription: "Check out our amazing products and services",
-        ogImage: "https://www.techslang.com/wp-content/uploads/2020/05/SEO-Specialist.jpg/3498db/ffffff?text=Home+Page",
-        ogUrl: "https://example.com/home",
-        content: "This is our home page with general information about our company."
+        title: "Beranda - Perusahaan Kami",
+        description: "Selamat datang di website resmi perusahaan kami",
+        ogTitle: "Temukan Solusi Terbaik untuk Bisnis Anda",
+        ogDescription: "Kami menyediakan layanan profesional untuk kebutuhan bisnis Anda",
+        ogImage: "https://example.com/images/home-og.jpg",
+        content: "Ini adalah halaman beranda kami."
       },
       product: {
-        title: "Premium Product XYZ - Best Quality",
-        description: "Buy our premium product XYZ with 30-day money back guarantee",
-        keywords: "product, xyz, premium, buy",
-        ogTitle: "🔥 Premium Product XYZ - Limited Offer!",
-        ogDescription: "Get our best product now with special discount!",
-        ogImage: "https://www.techslang.com/wp-content/uploads/2020/05/SEO-Specialist.jpg/e74c3c/ffffff?text=Product+XYZ",
-        ogUrl: "https://example.com/product/xyz",
-        content: "This is a product page for our premium Product XYZ with detailed specifications."
+        title: "Produk Unggulan - Perusahaan Kami",
+        description: "Lihat produk terbaik kami dengan kualitas terjamin",
+        ogTitle: "Produk Terbaik Tahun Ini - Diskon 20%",
+        ogDescription: "Dapatkan penawaran spesial untuk produk pilihan",
+        ogImage: "https://example.com/images/product-og.jpg",
+        content: "Ini adalah halaman produk kami."
       },
       article: {
-        title: "10 SEO Tips for 2024 - Complete Guide",
-        description: "Learn the most effective SEO techniques for 2024 to boost your rankings",
-        keywords: "seo, tips, 2024, guide",
-        ogTitle: "🚀 10 Must-Know SEO Tips for 2024",
-        ogDescription: "Discover the SEO strategies that actually work in 2024",
-        ogImage: "https://www.techslang.com/wp-content/uploads/2020/05/SEO-Specialist.jpg/2ecc71/ffffff?text=SEO+Tips+2024",
-        ogUrl: "https://example.com/article/seo-tips-2024",
-        content: "This is an article page with the latest SEO tips and tricks for 2024."
+        title: "Tips SEO 2024 - Artikel Terbaru",
+        description: "Pelajari teknik SEO terbaru untuk meningkatkan traffic",
+        ogTitle: "5 Tips SEO Yang Wajib Diketahui di 2024",
+        ogDescription: "Teknik SEO terkini yang masih efektif di tahun 2024",
+        ogImage: "https://example.com/images/article-og.jpg",
+        content: "Ini adalah halaman artikel kami."
       }
     };
 
@@ -134,42 +83,22 @@
       // Update metadata dasar
       document.title = page.title;
       document.querySelector('meta[name="description"]').content = page.description;
-      document.querySelector('meta[name="keywords"]').content = page.keywords;
       
       // Update OpenGraph
       document.querySelector('meta[property="og:title"]').content = page.ogTitle;
       document.querySelector('meta[property="og:description"]').content = page.ogDescription;
       document.querySelector('meta[property="og:image"]').content = page.ogImage;
-      document.querySelector('meta[property="og:url"]').content = page.ogUrl;
-      
-      // Update Twitter Card
-      document.querySelector('meta[name="twitter:title"]').content = page.ogTitle;
-      document.querySelector('meta[name="twitter:description"]').content = page.ogDescription;
-      document.querySelector('meta[name="twitter:image"]').content = page.ogImage;
-      
-      // Update URL di address bar (tanpa reload halaman)
-      window.history.pushState({}, '', `?page=${pageType}`);
       
       // Update konten halaman
       document.getElementById('page-title').textContent = page.title;
       document.getElementById('page-content').textContent = page.content;
       
-      // Update tampilan info metadata
-      document.getElementById('meta-title').textContent = page.title;
-      document.getElementById('meta-description').textContent = page.description;
-      document.getElementById('og-title').textContent = page.ogTitle;
-      document.getElementById('og-image').textContent = page.ogImage;
+      // Update URL (untuk testing)
+      window.history.pushState({}, '', `?type=${pageType}`);
     }
 
-    // Inisialisasi halaman berdasarkan parameter URL
-    function initPage() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const pageType = urlParams.get('page') || 'home';
-      loadPage(pageType);
-    }
-
-    // Jalankan inisialisasi saat halaman dimuat
-    window.onload = initPage;
+    // Inisialisasi halaman pertama kali
+    loadPage('home');
   </script>
 </body>
 </html>
