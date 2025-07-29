@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="page-title">Memuat...</title>
+  <title>Tujuh Sembilan Digital Bootcamp</title>
+
+  <!-- ✅ Open Graph statis agar bisa terbaca bot -->
+  <meta property="og:title" content="Tujuh Sembilan Digital Bootcamp" />
+  <meta property="og:description" content="Pelatihan digital marketing untuk meningkatkan keterampilan digital Anda." />
+  <meta property="og:image" content="https://digitalbootcamp.tujuhsembilan.com/assets/img/seo.webp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://digitalbootcamp.tujuhsembilan.com/landing" />
+
+  <!-- Metadata umum -->
+  <meta name="description" content="Pelatihan digital marketing untuk meningkatkan keterampilan digital Anda." />
 </head>
 <body>
   <main style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px;">
@@ -13,6 +23,7 @@
   </main>
 
   <script>
+    // Data artikel dinamis (bisa juga di-fetch dari API)
     const article = {
       title: "Tujuh Sembilan Digital Bootcamp",
       description: "Pelatihan digital marketing untuk meningkatkan keterampilan digital Anda.",
@@ -20,34 +31,12 @@
       url: "https://digitalbootcamp.tujuhsembilan.com/landing"
     };
 
-    // Isi konten
+    // Tampilkan konten dinamis
     document.getElementById("article-title").textContent = article.title;
     document.getElementById("article-description").textContent = article.description;
-    document.getElementById("article-image").src = article.image;
-    document.getElementById("article-image").style.display = "block";
-    document.title = article.title;
-
-    // Fungsi menambahkan <meta>
-    function addMeta(name, content, isProperty = false) {
-      const meta = document.createElement("meta");
-      if (isProperty) {
-        meta.setAttribute("property", name);
-      } else {
-        meta.setAttribute("name", name);
-      }
-      meta.setAttribute("content", content);
-      document.head.appendChild(meta);
-    }
-
-    // Metadata biasa
-    addMeta("description", article.description);
-
-    // Metadata OpenGraph
-    addMeta("og:title", article.title, true);
-    addMeta("og:description", article.description, true);
-    addMeta("og:image", article.image, true);
-    addMeta("og:type", "website", true);
-    addMeta("og:url", article.url, true);
+    const img = document.getElementById("article-image");
+    img.src = article.image;
+    img.style.display = "block";
   </script>
 </body>
 </html>
