@@ -1,38 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Placeholder Title -->
-  <title id="page-title">Loading...</title>
+  <title id="page-title">Memuat...</title>
 </head>
 <body>
-  <!-- Konten Halaman -->
-  <main style="max-width: 600px; margin: auto; font-family: sans-serif;">
-    <h1 id="article-title">Sedang Memuat...</h1>
-    <p id="article-content"></p>
-    <img id="article-image" src="" alt="" style="max-width: 100%; display: none;" />
+  <main style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px;">
+    <h1 id="article-title">Memuat konten...</h1>
+    <p id="article-description"></p>
+    <img id="article-image" src="" alt="Gambar Artikel" style="max-width: 100%; display: none;" />
   </main>
 
-  <!-- Script: Isi Dinamis -->
   <script>
-    // Simulasi data dari API atau backend
-    const articleData = {
-      title: "Belajar SEO untuk Pemula: Panduan Lengkap",
-      description: "Panduan mudah belajar SEO dari nol, cocok untuk pemula yang ingin memahami dasar-dasar SEO.",
-      image: "https://www.searchenginejournal.com/wp-content/uploads/2021/06/seo-guide-60a3a4eec64f8-sej.png" // Link valid gambar
+    const article = {
+      title: "Tujuh Sembilan Digital Bootcamp",
+      description: "Pelatihan digital marketing untuk meningkatkan keterampilan digital Anda.",
+      image: "https://digitalbootcamp.tujuhsembilan.com/assets/img/seo.webp",
+      url: "https://digitalbootcamp.tujuhsembilan.com/landing"
     };
 
-    // Ubah konten halaman
-    document.getElementById("article-title").textContent = articleData.title;
-    document.getElementById("article-content").textContent = articleData.description;
-    document.getElementById("article-image").src = articleData.image;
+    // Isi konten
+    document.getElementById("article-title").textContent = article.title;
+    document.getElementById("article-description").textContent = article.description;
+    document.getElementById("article-image").src = article.image;
     document.getElementById("article-image").style.display = "block";
-    document.title = articleData.title;
+    document.title = article.title;
 
-    // Fungsi untuk menambahkan meta tag
-    function addMetaTag(name, content, isProperty = false) {
+    // Fungsi menambahkan <meta>
+    function addMeta(name, content, isProperty = false) {
       const meta = document.createElement("meta");
       if (isProperty) {
         meta.setAttribute("property", name);
@@ -43,15 +39,15 @@
       document.head.appendChild(meta);
     }
 
-    // Tambah meta tag biasa
-    addMetaTag("description", articleData.description);
+    // Metadata biasa
+    addMeta("description", article.description);
 
-    // Tambah meta Open Graph
-    addMetaTag("og:title", articleData.title, true);
-    addMetaTag("og:description", articleData.description, true);
-    addMetaTag("og:image", articleData.image, true);
-    addMetaTag("og:type", "article", true);
-    addMetaTag("og:url", window.location.href, true);
+    // Metadata OpenGraph
+    addMeta("og:title", article.title, true);
+    addMeta("og:description", article.description, true);
+    addMeta("og:image", article.image, true);
+    addMeta("og:type", "website", true);
+    addMeta("og:url", article.url, true);
   </script>
 </body>
 </html>
