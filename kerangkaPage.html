@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Encoding karakter HTML -->
   <meta charset="UTF-8" />
-
-  <!-- Untuk responsif di perangkat mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Title sementara sebelum diganti JS -->
+  
+  <!-- Placeholder Title -->
   <title id="page-title">Loading...</title>
-
-  <!-- Favicon (opsional agar tampil lebih profesional) -->
-  <link rel="icon" href="https://example.com/favicon.ico" />
 </head>
 <body>
-  <!-- Konten utama halaman -->
-  <main>
+  <!-- Konten Halaman -->
+  <main style="max-width: 600px; margin: auto; font-family: sans-serif;">
     <h1 id="article-title">Sedang Memuat...</h1>
     <p id="article-content"></p>
+    <img id="article-image" src="" alt="" style="max-width: 100%; display: none;" />
   </main>
 
-  <!-- Script JavaScript untuk isi metadata secara dinamis -->
+  <!-- Script: Isi Dinamis -->
   <script>
-    // Simulasi data artikel dari API atau database
+    // Simulasi data dari API atau backend
     const articleData = {
       title: "Belajar SEO untuk Pemula: Panduan Lengkap",
       description: "Panduan mudah belajar SEO dari nol, cocok untuk pemula yang ingin memahami dasar-dasar SEO.",
-      image: "https://example.com/images/seo-guide.png"
+      image: "https://www.searchenginejournal.com/wp-content/uploads/2021/06/seo-guide-60a3a4eec64f8-sej.png" // Link valid gambar
     };
 
-    // Isi konten halaman dari data artikel
+    // Ubah konten halaman
     document.getElementById("article-title").textContent = articleData.title;
     document.getElementById("article-content").textContent = articleData.description;
-    document.title = articleData.title;  // Ganti title halaman
+    document.getElementById("article-image").src = articleData.image;
+    document.getElementById("article-image").style.display = "block";
+    document.title = articleData.title;
 
-    // Fungsi untuk menambahkan tag <meta>
-    function addMetaTag(name, content, property = false) {
-      const meta = document.createElement('meta');
-      if (property) {
-        meta.setAttribute('property', name); // Untuk Open Graph
+    // Fungsi untuk menambahkan meta tag
+    function addMetaTag(name, content, isProperty = false) {
+      const meta = document.createElement("meta");
+      if (isProperty) {
+        meta.setAttribute("property", name);
       } else {
-        meta.setAttribute('name', name);     // Untuk meta biasa
+        meta.setAttribute("name", name);
       }
-      meta.setAttribute('content', content);
+      meta.setAttribute("content", content);
       document.head.appendChild(meta);
     }
 
-    // Tambahkan metadata SEO biasa
+    // Tambah meta tag biasa
     addMetaTag("description", articleData.description);
 
-    // Tambahkan metadata Open Graph (OG)
+    // Tambah meta Open Graph
     addMetaTag("og:title", articleData.title, true);
     addMetaTag("og:description", articleData.description, true);
     addMetaTag("og:image", articleData.image, true);
