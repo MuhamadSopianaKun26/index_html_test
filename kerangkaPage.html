@@ -1,33 +1,175 @@
+<!-- Source DEEPSEEK, dibantu AI karena saya belum begitu memahami javascript dengan baik-->
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tujuh Sembilan Digital Bootcamp</title>
-
-  <!-- ✅ Metadata untuk SEO -->
-  <meta name="description" content="Pelatihan digital marketing untuk meningkatkan keterampilan digital Anda.">
-
-  <!-- ✅ Metadata Open Graph (dibaca oleh Facebook, WhatsApp, LinkedIn, dll) -->
-  <meta property="og:title" content="Tujuh Sembilan Digital Bootcamp" />
-  <meta property="og:description" content="Pelatihan digital marketing untuk meningkatkan keterampilan digital Anda." />
-  <meta property="og:image" content="https://digitalbootcamp.tujuhsembilan.com/assets/img/seo.webp" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://digitalbootcamp.tujuhsembilan.com/landing" />
-
-  <!-- ✅ Metadata untuk Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tujuh Sembilan Digital Bootcamp" />
-  <meta name="twitter:description" content="Pelatihan digital marketing untuk meningkatkan keterampilan digital Anda." />
-  <meta name="twitter:image" content="https://digitalbootcamp.tujuhsembilan.com/assets/img/seo.webp" />
+  <!-- Metadata Dinamis akan diisi oleh JavaScript -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Default Title</title>
+  <meta name="description" content="Default description">
+  <meta name="keywords" content="default, keywords">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:title" content="Default OG Title">
+  <meta property="og:description" content="Default OG Description">
+  <meta property="og:image" content="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftranslate.google.com%2Ftranslate%3Fu%3Dhttps%3A%2F%2Fwww.techslang.com%2Fdefinition%2Fwhat-is-a-search-engine-optimization-seo-specialist%2F%26hl%3Did%26sl%3Den%26tl%3Did%26client%3Dimgs&psig=AOvVaw1T36v6hMb_67FvHqup24ou&ust=1753888978362000&source=images&cd=vfe&opi=89978449&ved=0CBcQjRxqFwoTCKi8zt-v4o4DFQAAAAAdAAAAABAE/1200x630">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Default Twitter Title">
+  <meta name="twitter:description" content="Default Twitter Description">
+  <meta name="twitter:image" content="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftranslate.google.com%2Ftranslate%3Fu%3Dhttps%3A%2F%2Fwww.techslang.com%2Fdefinition%2Fwhat-is-a-search-engine-optimization-seo-specialist%2F%26hl%3Did%26sl%3Den%26tl%3Did%26client%3Dimgs&psig=AOvVaw1T36v6hMb_67FvHqup24ou&ust=1753888978362000&source=images&cd=vfe&opi=89978449&ved=0CBcQjRxqFwoTCKi8zt-v4o4DFQAAAAAdAAAAABAE/1200x630">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    .meta-info {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .meta-info h2 {
+      margin-top: 0;
+      color: #2980b9;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .buttons {
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
-  <main style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px;">
-    <h1>Tujuh Sembilan Digital Bootcamp</h1>
-    <p>Pelatihan digital marketing untuk meningkatkan keterampilan digital Anda.</p>
-    <img src="https://digitalbootcamp.tujuhsembilan.com/assets/img/seo.webp" alt="Preview Bootcamp" style="max-width: 100%;" />
-  </main>
+  <div class="meta-info">
+    <h2>Metadata Information</h2>
+    <p><strong>Title:</strong> <span id="meta-title">Default Title</span></p>
+    <p><strong>Description:</strong> <span id="meta-description">Default description</span></p>
+    <p><strong>OG Title:</strong> <span id="og-title">Default OG Title</span></p>
+    <p><strong>OG Image:</strong> <span id="og-image">https://via.placeholder.com/1200x630</span></p>
+  </div>
+
+  <h1 id="page-title">Default Page Title</h1>
+  <p id="page-content">This is default page content. Select a page type below to see dynamic metadata in action.</p>
+  
+  <div class="buttons">
+    <button onclick="loadPage('home')">Home Page</button>
+    <button onclick="loadPage('product')">Product Page</button>
+    <button onclick="loadPage('article')">Article Page</button>
+  </div>
+
+  <div>
+    <h3>Test OpenGraph on Social Media:</h3>
+    <p>To test how this page will appear when shared:</p>
+    <ol>
+      <li>Copy this page URL after selecting a page type</li>
+      <li>Use <a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Sharing Debugger</a></li>
+      <li>Or paste the URL in WhatsApp, LinkedIn, etc.</li>
+    </ol>
+  </div>
+
+  <script>
+    // Data untuk berbagai jenis halaman (hanya simulasi API atau Database)
+    const pages = {
+      home: {
+        title: "Welcome to Our Website",
+        description: "Discover our amazing products and services for your needs",
+        keywords: "home, welcome, main page",
+        ogTitle: "Welcome to Our Awesome Website!",
+        ogDescription: "Check out our amazing products and services",
+        ogImage: "https://via.placeholder.com/1200x630/3498db/ffffff?text=Home+Page",
+        ogUrl: "https://example.com/home",
+        content: "This is our home page with general information about our company."
+      },
+      product: {
+        title: "Premium Product XYZ - Best Quality",
+        description: "Buy our premium product XYZ with 30-day money back guarantee",
+        keywords: "product, xyz, premium, buy",
+        ogTitle: "🔥 Premium Product XYZ - Limited Offer!",
+        ogDescription: "Get our best product now with special discount!",
+        ogImage: "https://via.placeholder.com/1200x630/e74c3c/ffffff?text=Product+XYZ",
+        ogUrl: "https://example.com/product/xyz",
+        content: "This is a product page for our premium Product XYZ with detailed specifications."
+      },
+      article: {
+        title: "10 SEO Tips for 2024 - Complete Guide",
+        description: "Learn the most effective SEO techniques for 2024 to boost your rankings",
+        keywords: "seo, tips, 2024, guide",
+        ogTitle: "🚀 10 Must-Know SEO Tips for 2024",
+        ogDescription: "Discover the SEO strategies that actually work in 2024",
+        ogImage: "https://via.placeholder.com/1200x630/2ecc71/ffffff?text=SEO+Tips+2024",
+        ogUrl: "https://example.com/article/seo-tips-2024",
+        content: "This is an article page with the latest SEO tips and tricks for 2024."
+      }
+    };
+
+    // Fungsi untuk memuat halaman dengan metadata dinamis
+    function loadPage(pageType) {
+      const page = pages[pageType] || pages.home;
+      
+      // Update metadata dasar
+      document.title = page.title;
+      document.querySelector('meta[name="description"]').content = page.description;
+      document.querySelector('meta[name="keywords"]').content = page.keywords;
+      
+      // Update OpenGraph
+      document.querySelector('meta[property="og:title"]').content = page.ogTitle;
+      document.querySelector('meta[property="og:description"]').content = page.ogDescription;
+      document.querySelector('meta[property="og:image"]').content = page.ogImage;
+      document.querySelector('meta[property="og:url"]').content = page.ogUrl;
+      
+      // Update Twitter Card
+      document.querySelector('meta[name="twitter:title"]').content = page.ogTitle;
+      document.querySelector('meta[name="twitter:description"]').content = page.ogDescription;
+      document.querySelector('meta[name="twitter:image"]').content = page.ogImage;
+      
+      // Update URL di address bar (tanpa reload halaman)
+      window.history.pushState({}, '', `?page=${pageType}`);
+      
+      // Update konten halaman
+      document.getElementById('page-title').textContent = page.title;
+      document.getElementById('page-content').textContent = page.content;
+      
+      // Update tampilan info metadata
+      document.getElementById('meta-title').textContent = page.title;
+      document.getElementById('meta-description').textContent = page.description;
+      document.getElementById('og-title').textContent = page.ogTitle;
+      document.getElementById('og-image').textContent = page.ogImage;
+    }
+
+    // Inisialisasi halaman berdasarkan parameter URL
+    function initPage() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const pageType = urlParams.get('page') || 'home';
+      loadPage(pageType);
+    }
+
+    // Jalankan inisialisasi saat halaman dimuat
+    window.onload = initPage;
+  </script>
 </body>
 </html>
