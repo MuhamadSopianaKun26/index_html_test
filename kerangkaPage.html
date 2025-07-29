@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Encoding karakter HTML -->
+  <meta charset="UTF-8" />
+
+  <!-- Untuk responsif di perangkat mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title sementara sebelum diganti JS -->
+  <title id="page-title">Loading...</title>
+
+  <!-- Favicon (opsional agar tampil lebih profesional) -->
+  <link rel="icon" href="https://example.com/favicon.ico" />
+</head>
+<body>
+  <!-- Konten utama halaman -->
+  <main>
+    <h1 id="article-title">Sedang Memuat...</h1>
+    <p id="article-content"></p>
+  </main>
+
+  <!-- Script JavaScript untuk isi metadata secara dinamis -->
+  <script>
+    // Simulasi data artikel dari API atau database
+    const articleData = {
+      title: "Belajar SEO untuk Pemula: Panduan Lengkap",
+      description: "Panduan mudah belajar SEO dari nol, cocok untuk pemula yang ingin memahami dasar-dasar SEO.",
+      image: "https://example.com/images/seo-guide.png"
+    };
+
+    // Isi konten halaman dari data artikel
+    document.getElementById("article-title").textContent = articleData.title;
+    document.getElementById("article-content").textContent = articleData.description;
+    document.title = articleData.title;  // Ganti title halaman
+
+    // Fungsi untuk menambahkan tag <meta>
+    function addMetaTag(name, content, property = false) {
+      const meta = document.createElement('meta');
+      if (property) {
+        meta.setAttribute('property', name); // Untuk Open Graph
+      } else {
+        meta.setAttribute('name', name);     // Untuk meta biasa
+      }
+      meta.setAttribute('content', content);
+      document.head.appendChild(meta);
+    }
+
+    // Tambahkan metadata SEO biasa
+    addMetaTag("description", articleData.description);
+
+    // Tambahkan metadata Open Graph (OG)
+    addMetaTag("og:title", articleData.title, true);
+    addMetaTag("og:description", articleData.description, true);
+    addMetaTag("og:image", articleData.image, true);
+    addMetaTag("og:type", "article", true);
+    addMetaTag("og:url", window.location.href, true);
+  </script>
+</body>
+</html>
